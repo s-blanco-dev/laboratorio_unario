@@ -2,6 +2,7 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_log_level.h"
+#include "rgb_led.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
 #include <stdint.h>
@@ -29,18 +30,19 @@ void app_main(void) {
     }
     const char* tag = "COLOR_CHANGE";
 
+    const color_t red = {255, 0, 0};
+    const color_t green = {0, 255, 0};
+    const color_t blue = {0, 0, 255};
+
     while (1) {
-        led->set_pixel(led, 0, 255, 0, 0);
-        led->refresh(led, 100);
         ESP_LOGI(tag, "RED\n");
         delay_ms(BLINK_PERIOD_MS);
-        led->set_pixel(led, 0, 0, 255, 0);
-        led->refresh(led, 100);
+        led_set_color(led, red);
         ESP_LOGI(tag, "GREEN\n");
         delay_ms(BLINK_PERIOD_MS);
-        led->set_pixel(led, 0, 0, 0, 255);
-        led->refresh(led, 100);
+        led_set_color(led, green);
         ESP_LOGI(tag, "BLUE\n");
         delay_ms(BLINK_PERIOD_MS);
+        led_set_color(led, blue);
     }
 }
