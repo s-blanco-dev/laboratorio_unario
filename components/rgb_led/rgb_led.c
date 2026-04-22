@@ -31,6 +31,7 @@ esp_err_t led_set_color(led_strip_t *led, color_t colors) {
 
 /*
  * Función wrapper a ruego del Dr. Ing. Nicolás Alberto Calarco
+ * No funciona, no use. Solo valor teórico
  * */
 esp_err_t create_led(led_strip_t *led) {
     return led_rgb_init(&led);

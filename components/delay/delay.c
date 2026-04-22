@@ -10,7 +10,6 @@
 void delay_ms(uint32_t ms) {
     // us = x10^-6
     // ms = x10^-3
-    // vTaskDelay(pdMS_TO_TICKS(ms));
     esp_rom_delay_us(ms * 1000);
 }
 

@@ -1,12 +1,9 @@
 #include "../components/delay/include/delay.h"
 #include "esp_err.h"
 #include "esp_log.h"
-#include "esp_log_level.h"
 #include "rgb_led.h"
 #include "led_strip.h"
-#include "sdkconfig.h"
 #include <stdint.h>
-#include <stdio.h>
 
 #define ARRAY_SIZE 12
 #define BLINK_PERIOD_MS 1000
@@ -17,16 +14,8 @@ char exampleArray[ARRAY_SIZE];
 led_strip_t *led;
 
 void app_main(void) {
-    // probemos
-    // int ing = 0;
-    // while (true) {
-    //   ing++;
-    //   ESP_LOGI("", "ho ho ho: %d\n", ing);
-    //   delay_s(2);
-    // }
-
     if (led_rgb_init(&led) != ESP_OK) {
-        ESP_LOGE("Ojaldre", "Reventó Fermat\n");
+        ESP_LOGE("ERR", "No se pudo inicializar el driver LED.\nConsulte inmediatamente al Dr. Alfredo Arnaud\n");
     }
     const char* tag = "COLOR_CHANGE";
 
