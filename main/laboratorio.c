@@ -15,7 +15,7 @@ led_strip_t *led;
 
 void app_main(void) {
     if (led_rgb_init(&led) != ESP_OK) {
-        ESP_LOGE("ERR", "No se pudo inicializar el driver LED.\nConsulte inmediatamente al Dr. Alfredo Arnaud\n");
+        ESP_LOGE("ERR", "No se pudo inicializar el driver LED.\n");
     }
     const char* tag = "COLOR_CHANGE";
 

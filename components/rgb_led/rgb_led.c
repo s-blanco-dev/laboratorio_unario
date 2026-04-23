@@ -24,7 +24,7 @@ esp_err_t led_set_color(led_strip_t *led, color_t colors) {
     }
     esp_err_t morr = led->refresh(led, 100);
     if (morr != ESP_OK) {
-        return err;
+        return morr;
     }
     return ESP_OK;
 }

@@ -1,9 +1,9 @@
+#ifndef RGB_LED
+#define RGB_LED
+
 #include "esp_err.h"
 #include "led_strip.h"
 #include <stdint.h>
-
-#ifndef RGB_LED
-#define RGB_LED
 
 typedef struct color_s {
     uint8_t r;
